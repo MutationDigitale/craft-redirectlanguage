@@ -1,0 +1,21 @@
+{
+  "name": "mutation/redirectlanguage",
+  "description": "Redirect homepage to the right language based on browser and cookies",
+  "version": "1.0.0",
+  "type": "craft-plugin",
+  "minimum-stability": "beta",
+  "autoload": {
+    "psr-4": {
+      "mutation\\redirectlanguage\\": "src/"
+    }
+  },
+  "support": {
+    "email": "sam@mutation.io"
+  },
+  "extra": {
+    "handle": "redirectlanguage",
+    "name": "Redirect Language",
+    "developer": "Mutation Digitale",
+    "developerUrl": "http://mutation.io"
+  }
+}
