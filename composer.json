@@ -1,21 +1,33 @@
 {
   "name": "mutation/redirectlanguage",
   "description": "Redirect homepage to the right language based on browser and cookies",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "type": "craft-plugin",
-  "minimum-stability": "beta",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Mutation Digitale",
+      "email": "sam@mutation.io",
+      "homepage": "https://mutation.io/"
+    }
+  ],
+  "require": {
+    "craftcms/cms": "^3.0.0"
+  },
   "autoload": {
     "psr-4": {
       "mutation\\redirectlanguage\\": "src/"
     }
   },
-  "support": {
-    "email": "sam@mutation.io"
-  },
   "extra": {
-    "handle": "redirectlanguage",
     "name": "Redirect Language",
-    "developer": "Mutation Digitale",
-    "developerUrl": "http://mutation.io"
+    "handle": "redirectlanguage",
+    "schemaVersion": "1.0.0",
+    "developerEmail": "sam@mutation.io",
+    "documentationUrl": "https://bitbucket.org/mutationdigitale/craft3-redirectlanguage/src/master/README.md",
+    "changelogUrl": "https://bitbucket.org/mutationdigitale/craft3-redirectlanguage/raw/master/CHANGELOG.md",
+    "hasCpSettings": false,
+    "hasCpSection": false,
+    "class": "mutation\\redirectlanguage\\RedirectLanguage"
   }
 }

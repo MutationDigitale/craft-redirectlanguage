@@ -2,9 +2,10 @@
 
 namespace mutation\redirectlanguage;
 
+use craft\base\Plugin;
 use craft\elements\Entry;
 
-class Plugin extends \craft\base\Plugin
+class RedirectLanguage extends Plugin
 {
 	CONST COOKIE_NAME = 'craft_lang';
 
