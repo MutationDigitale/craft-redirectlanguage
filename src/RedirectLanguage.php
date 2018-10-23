@@ -43,6 +43,10 @@ class RedirectLanguage extends Plugin
             return;
         }
 
+        if ($current_path !== '') {
+            return;
+        }
+
         $cookie_site_id = $_COOKIE[self::COOKIE_NAME] ?? '';
 
         if (\in_array($cookie_site_id, $sites_list_ids)) {
@@ -71,9 +75,7 @@ class RedirectLanguage extends Plugin
             }
         }
 
-        if ($current_path === '') {
-            \Craft::$app->response->redirect(\Craft::getAlias($browser_site->baseUrl));
-        }
+        \Craft::$app->response->redirect(\Craft::getAlias($browser_site->baseUrl));
     }
 
     private function parse_language_list($languageList)

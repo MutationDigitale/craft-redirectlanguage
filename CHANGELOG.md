@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.0.5 - 2018-10-23
+
+### Fixed
+- Fixed redirect on other than homepage
+
 ## 1.0.4 - 2018-10-23
 
 ### Fixed
