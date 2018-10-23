@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.0.2 - 2018-10-23
+
+### Changed
+- New repository
+
 ## 1.0.1 - 2018-04-16
 
 ### Changed
