@@ -1,7 +1,7 @@
 {
   "name": "mutation/redirectlanguage",
   "description": "Redirect homepage to the right language based on browser and cookies",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "type": "craft-plugin",
   "support": {
     "docs": "https://github.com/MutationDigitale/craft3-redirectlanguage/blob/master/README.md",

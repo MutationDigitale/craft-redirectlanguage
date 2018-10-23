@@ -12,8 +12,6 @@ class RedirectLanguage extends Plugin
     {
         parent::init();
 
-        $current_path = trim($_SERVER['REQUEST_URI'], '/');
-
         if (!(isset($_SERVER['REQUEST_METHOD']) &&
             $_SERVER['REQUEST_METHOD'] === 'GET' &&
             \Craft::$app->request->isSiteRequest &&
@@ -23,6 +21,8 @@ class RedirectLanguage extends Plugin
         ) {
             return;
         }
+
+        $current_path = trim($_SERVER['REQUEST_URI'], '/');
 
         foreach (\Craft::$app->i18n->getSiteLocales() as $locale) {
             $available_languages[] = $locale->id;
