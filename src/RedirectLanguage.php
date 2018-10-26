@@ -51,7 +51,7 @@ class RedirectLanguage extends Plugin
 
         if (\in_array($cookie_site_id, $sites_list_ids)) {
             $cookie_site = \Craft::$app->sites->getSiteById($cookie_site_id);
-            \Craft::$app->response->redirect(\Craft::getAlias($cookie_site->baseUrl));
+            \Craft::$app->response->redirect(\Craft::getAlias($cookie_site->baseUrl))->send();
             return;
         }
 
@@ -75,7 +75,7 @@ class RedirectLanguage extends Plugin
             }
         }
 
-        \Craft::$app->response->redirect(\Craft::getAlias($browser_site->baseUrl));
+        \Craft::$app->response->redirect(\Craft::getAlias($browser_site->baseUrl))->send();
     }
 
     private function parse_language_list($languageList)

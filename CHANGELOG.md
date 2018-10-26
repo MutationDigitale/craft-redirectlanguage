@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.0.6 - 2018-10-26
+
+### Fixed
+- Fixed redirect not always working
+
 ## 1.0.5 - 2018-10-23
 
 ### Fixed
