@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.0.7 - 2019-01-09
+
+### Fixed
+- Fixed site url when it's en environment variable
+
 ## 1.0.6 - 2018-10-26
 
 ### Fixed
