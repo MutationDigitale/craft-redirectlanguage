@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.0.8 - 2019-09-13
+
+### Fixed
+- Fixed an error when $_SERVER['HTTP_ACCEPT_LANGUAGE'] is undefined
+
 ## 1.0.7 - 2019-01-09
 
 ### Fixed
