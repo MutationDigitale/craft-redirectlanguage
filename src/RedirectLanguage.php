@@ -66,7 +66,7 @@ class RedirectLanguage extends Plugin
         $matches_values = array_values($matches);
         $first_match = array_shift($matches_values);
 
-        $browser_lang = count($first_match) > 0 ? $first_match[0] : null;
+        $browser_lang = is_array($first_match) && count($first_match) > 0 ? $first_match[0] : null;
 
         $browser_site = null;
         if ($browser_lang === null) {

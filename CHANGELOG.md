@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.0.9 - 2019-09-13
+
+### Fixed
+- Fixed an error when browser languages weren't available
+
 ## 1.0.8 - 2019-09-13
 
 ### Fixed
