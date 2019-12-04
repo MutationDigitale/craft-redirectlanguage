@@ -1,3 +1,3 @@
-# Redirect language
+# Site redirection
 
-Redirect the url with no language prefix to one with a language prefix (based on brower language and cookies)
+When a user hit the homepage without the site prefix (/), (s)he will be redirect to the right site based on the browser language, preferences (cookies) and main site.
