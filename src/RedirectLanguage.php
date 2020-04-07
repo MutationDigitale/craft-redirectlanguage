@@ -54,8 +54,8 @@ class RedirectLanguage extends Plugin
 
         if (in_array($cookie_site_id, $sites_list_ids, true)) {
             $cookie_site = Craft::$app->sites->getSiteById($cookie_site_id);
-            Craft::$app->response->redirect($cookie_site->getBaseUrl())->send();
-            return;
+            Craft::$app->response->redirect($cookie_site->getBaseUrl());
+            Craft::$app->end();
         }
 
         $accepted = isset($_SERVER['HTTP_ACCEPT_LANGUAGE']) ?
@@ -80,7 +80,8 @@ class RedirectLanguage extends Plugin
             }
         }
 
-        Craft::$app->response->redirect($browser_site->getBaseUrl())->send();
+        Craft::$app->response->redirect($browser_site->getBaseUrl());
+        Craft::$app->end();
     }
 
     private function parse_language_list($languageList)

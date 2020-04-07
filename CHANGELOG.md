@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.0.10 - 2020-04-07
+
+### Fixed
+- Performance improvement by ending request when redirecting
+
 ## 1.0.9 - 2019-09-13
 
 ### Fixed
