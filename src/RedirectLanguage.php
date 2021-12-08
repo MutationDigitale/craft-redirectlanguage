@@ -39,7 +39,7 @@ class RedirectLanguage extends Plugin
 
         $current_site = Craft::$app->sites->getCurrentSite();
         $current_site_url = $current_site->getBaseUrl();
-        $current_site_path = trim(parse_url($current_site_url)['path'], '/');
+        $current_site_path = trim(parse_url($current_site_url, PHP_URL_PATH), '/');
 
         if ($current_site_path === $current_path) {
             setcookie(self::COOKIE_NAME, $current_site->id, 0, '/');
@@ -50,9 +50,9 @@ class RedirectLanguage extends Plugin
             return;
         }
 
-        $cookie_site_id = $_COOKIE[self::COOKIE_NAME] ?? '';
+        $cookie_site_id = $_COOKIE[self::COOKIE_NAME] ?? null;
 
-        if (in_array($cookie_site_id, $sites_list_ids, true)) {
+        if ($cookie_site_id && in_array((int)$cookie_site_id, $sites_list_ids, true)) {
             $cookie_site = Craft::$app->sites->getSiteById($cookie_site_id);
             Craft::$app->response->redirect($cookie_site->getBaseUrl());
             Craft::$app->end();
