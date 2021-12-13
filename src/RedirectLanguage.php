@@ -42,7 +42,7 @@ class RedirectLanguage extends Plugin
         $current_site_path = trim(parse_url($current_site_url, PHP_URL_PATH), '/');
 
         if ($current_site_path === $current_path) {
-            setcookie(self::COOKIE_NAME, $current_site->id, 0, '/');
+            setcookie(self::COOKIE_NAME, $current_site->id, 0, '/', '', true, true);
             return;
         }
 
@@ -50,12 +50,14 @@ class RedirectLanguage extends Plugin
             return;
         }
 
-        $cookie_site_id = $_COOKIE[self::COOKIE_NAME] ?? null;
+        $cookie_site_id = isset($_COOKIE[self::COOKIE_NAME]) ? (int)$_COOKIE[self::COOKIE_NAME] : null;
 
-        if ($cookie_site_id && in_array((int)$cookie_site_id, $sites_list_ids, true)) {
+        if ($cookie_site_id && in_array($cookie_site_id, $sites_list_ids, true)) {
             $cookie_site = Craft::$app->sites->getSiteById($cookie_site_id);
-            Craft::$app->response->redirect($cookie_site->getBaseUrl());
-            Craft::$app->end();
+            if ($cookie_site) {
+                Craft::$app->response->redirect($cookie_site->getBaseUrl());
+                Craft::$app->end();
+            }
         }
 
         $accepted = isset($_SERVER['HTTP_ACCEPT_LANGUAGE']) ?
@@ -87,8 +89,7 @@ class RedirectLanguage extends Plugin
     private function parse_language_list($languageList)
     {
         $languages = array();
-        $languageRanges = explode(',', trim($languageList));
-        foreach ($languageRanges as $languageRange) {
+        foreach (explode(',', trim($languageList)) as $languageRange) {
             if (preg_match('/(\*|[a-zA-Z0-9]{1,8}(?:-[a-zA-Z0-9]{1,8})*)(?:\s*;\s*q\s*=\s*(0(?:\.\d{0,3})|1(?:\.0{0,3})))?/', trim($languageRange), $match)) {
                 if (!isset($match[2])) {
                     $match[2] = '1.0';
