@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.0.12 - 2021-12-13
+
+### Changed
+- Cookie set to HttpOnly and Secure
+
 ## 1.0.11 - 2021-12-08
 
 ### Fixed
