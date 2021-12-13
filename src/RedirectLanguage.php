@@ -8,7 +8,7 @@ use function in_array;
 
 class RedirectLanguage extends Plugin
 {
-    CONST COOKIE_NAME = 'craft_site_id';
+    const COOKIE_NAME = 'craft_site_id';
 
     public function init()
     {
@@ -42,7 +42,8 @@ class RedirectLanguage extends Plugin
         $current_site_path = trim(parse_url($current_site_url, PHP_URL_PATH), '/');
 
         if ($current_site_path === $current_path) {
-            setcookie(self::COOKIE_NAME, $current_site->id, 0, '/', '', true, true);
+            $cookieConfig = Craft::cookieConfig();
+            setcookie(self::COOKIE_NAME, $current_site->id, 0, '/', $cookieConfig['domain'], $cookieConfig['secure'], $cookieConfig['httpOnly']);
             return;
         }
 

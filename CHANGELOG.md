@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.0.13 - 2021-12-13
+
+### Changed
+- Use Cookie settings from CraftCMS
+
 ## 1.0.12 - 2021-12-13
 
 ### Changed
