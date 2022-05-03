@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.0.0-beta.1 - 2022-05-03
+
+### Added
+- Support for Craft 4
+
 ## 1.0.13 - 2021-12-13
 
 ### Changed

@@ -8,7 +8,7 @@ use function in_array;
 
 class RedirectLanguage extends Plugin
 {
-    const COOKIE_NAME = 'craft_site_id';
+    private const COOKIE_NAME = 'craft_site_id';
 
     public function init()
     {
@@ -87,11 +87,11 @@ class RedirectLanguage extends Plugin
         Craft::$app->end();
     }
 
-    private function parse_language_list($languageList)
+    private function parse_language_list($languageList): array
     {
         $languages = array();
         foreach (explode(',', trim($languageList)) as $languageRange) {
-            if (preg_match('/(\*|[a-zA-Z0-9]{1,8}(?:-[a-zA-Z0-9]{1,8})*)(?:\s*;\s*q\s*=\s*(0(?:\.\d{0,3})|1(?:\.0{0,3})))?/', trim($languageRange), $match)) {
+            if (preg_match('/(\*|[a-zA-Z0-9]{1,8}(?:-[a-zA-Z0-9]{1,8})*)(?:\s*;\s*q\s*=\s*(0\.\d{0,3}|1\.0{0,3}))?/', trim($languageRange), $match)) {
                 if (!isset($match[2])) {
                     $match[2] = '1.0';
                 } else {
@@ -107,7 +107,7 @@ class RedirectLanguage extends Plugin
         return $languages;
     }
 
-    private function find_matches($accepted, $available)
+    private function find_matches($accepted, $available): array
     {
         $matches = array();
         $any = false;
@@ -147,7 +147,7 @@ class RedirectLanguage extends Plugin
         return $matches;
     }
 
-    private function match_language($a, $b)
+    private function match_language($a, $b): float|int
     {
         $a = explode('-', $a);
         $b = explode('-', $b);
